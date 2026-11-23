@@ -1,4 +1,10 @@
-# CI/CD Tools and Practices Final Project Template
+# DevOps Capstone
+
+![Build Status](https://github.com/thoughtsmy25-prog/ci-cd-final-project/actions/workflows/ci-build.yaml/badge.svg)
+
+## Project Description
+
+This project is a DevOps Capstone project implementing an Account REST API service using Continuous Integration, automated testing, Docker containerization, Kubernetes deployment, and Continuous Delivery.# CI/CD Tools and Practices Final Project Template
 
 This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
 
