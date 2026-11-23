@@ -1,6 +1,5 @@
 # DevOps Capstone
-
-![Build Status](https://github.com/thoughtsmy25-prog/ci-cd-final-project/actions/workflows/ci-build.yaml/badge.svg)
+![Build Status](https://github.com/thoughtsmy25-prog/ci-cd-final-project/actions/workflows/workflow.yml/badge.svg)
 
 ## Project Description
 
