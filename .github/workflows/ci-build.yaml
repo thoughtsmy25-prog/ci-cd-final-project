@@ -1,32 +1,17 @@
-name: CI Build
+"""
+Service Package
+"""
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+from flask import Flask
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+app = Flask(__name__)
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+# This must be imported after the Flask app is created
+from service import routes  # noqa: E402, F401
+from service.common import log_handlers  # noqa: E402
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+log_handlers.init_logging(app, "gunicorn.error")
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install flake8 nose
-
-      - name: Run linting
-        run: flake8 service tests
-
-      - name: Run unit tests
-        run: nosetests
+app.logger.info(70 * "*")
+app.logger.info(" S E R V I C E   R U N N I N G ".center(70, "*"))
+app.logger.info(70 * "*")
