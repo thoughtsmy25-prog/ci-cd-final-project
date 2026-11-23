@@ -4,6 +4,8 @@ Werkzeug==2.1.2
 # Runtime dependencies
 Flask==2.1.2
 python-dotenv==0.20.0
+Flask-Talisman
+Flask-Cors
 
 # Runtime tools
 gunicorn==20.1.0
