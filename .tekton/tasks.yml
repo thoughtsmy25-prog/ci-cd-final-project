@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: flake8
+spec:
+  steps:
+    - name: lint
+      image: python:3.9
+      script: |
+        pip install flake8
+        flake8 service tests
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: nose
+spec:
+  steps:
+    - name: test
+      image: python:3.9
+      script: |
+        pip install -r requirements.txt
+        pip install nose
+        nosetests
